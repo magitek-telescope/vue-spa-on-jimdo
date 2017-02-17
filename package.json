@@ -1,0 +1,26 @@
+{
+  "name": "vue-spa-on-jimdo",
+  "version": "1.0.0",
+  "description": "https://jimdo.com hack.",
+  "main": "main.js",
+  "scripts": {
+    "build": "NODE_ENV=development webpack src/main.js -d public_html/bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/potato4d/vue-spa-on-jimdo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/potato4d/vue-spa-on-jimdo/issues"
+  },
+  "homepage": "https://github.com/potato4d/vue-spa-on-jimdo#readme",
+  "devDependencies": {
+    "vue": "^2.1.10",
+    "vue-router": "^2.2.1",
+    "webpack": "^2.2.1"
+  }
+}
