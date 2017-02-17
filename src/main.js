@@ -2,7 +2,7 @@
   const $ = e=>document.querySelector(e);
   const $$ = e=>document.querySelectorAll(e);
   const del = e=>{if(e) e.parentNode.removeChild(e);};
-  const env = "development";
+  const env = process.env.NODE_ENV;
 
   const init = function(){
     const firebase = require("firebase");
