@@ -1,5 +1,7 @@
 # SPA on Jimdo using Vue.js
 
+https://potato4d.jimdo.com
+
 https://jimdo.com hack.
 
 ## Usage
