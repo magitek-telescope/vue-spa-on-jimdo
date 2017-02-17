@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/potato4d/vue-spa-on-jimdo#readme",
   "devDependencies": {
+    "firebase": "^3.6.9",
     "vue": "^2.1.10",
     "vue-router": "^2.2.1",
     "webpack": "^2.2.1"

@@ -2,9 +2,10 @@
   const $ = e=>document.querySelector(e);
   const $$ = e=>document.querySelectorAll(e);
   const del = e=>{if(e) e.parentNode.removeChild(e);};
-  const env = "jimdo";
+  const env = "development";
 
   const init = function(){
+    const firebase = require("firebase");
     const Vue = require("../node_modules/vue/dist/vue.min.js");
     const VueRouter = require("../node_modules/vue-router/dist/vue-router.min.js");
     Vue.use(VueRouter);
@@ -19,6 +20,14 @@
     router.beforeEach((to, from, next) => {
       document.title = `${to.meta.title} - Jimdo Vue`;
       next();
+    });
+
+    firebase.initializeApp({
+      apiKey: "AIzaSyBQ2AOFMsuLK_WXFxwsRDvQ3orXBAFqnuw",
+      authDomain: "jimdo-vue.firebaseapp.com",
+      databaseURL: "https://jimdo-vue.firebaseio.com",
+      storageBucket: "jimdo-vue.appspot.com",
+      messagingSenderId: "569483398438"
     });
 
     new Vue({
