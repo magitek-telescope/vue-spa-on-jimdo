@@ -1,15 +1,12 @@
 (function(){
   const $ = e=>document.querySelector(e);
   const $$ = e=>document.querySelectorAll(e);
-  const del = e=>{
-    if(e) e.parentNode.removeChild(e);
-  };
+  const del = e=>{if(e) e.parentNode.removeChild(e);};
   const env = "jimdo";
 
   const init = function(){
     const Vue = require("../node_modules/vue/dist/vue.min.js");
     const VueRouter = require("../node_modules/vue-router/dist/vue-router.min.js");
-
     Vue.use(VueRouter);
     const app = require("./app");
     const routes = [
@@ -18,11 +15,8 @@
       {path: "/page2", component: require("./pages/page2")},
       {path: "/page3", component: require("./pages/page3")}
     ];
-
-    const router = new VueRouter({routes});
-    console.log(app);
     new Vue({
-      router,
+      router: new VueRouter({routes}),
       template: require("./app"),
       created(){
         const s = document.createElement("style");
@@ -45,14 +39,12 @@
           del($("#loginbox"));
           del($("#loginbox-darklayer"));
           $("#cc-inner").setAttribute("class", "");
-          setTimeout(()=>{
-            $("body").childNodes[1].id = "app";
-            $("body").setAttribute("id", "");
-            $("body").setAttribute("class", "");
-            $("body").setAttribute("style", "");
-            for(let link of $$("link[rel='stylesheet']")){link.parentNode.removeChild(link);}
-            init();
-          }, 0);
+          $("body").childNodes[1].id = "app";
+          $("body").setAttribute("id", "");
+          $("body").setAttribute("class", "");
+          $("body").setAttribute("style", "");
+          for(let link of $$("link[rel='stylesheet']")){link.parentNode.removeChild(link);}
+          init();
         }
       }
     });
