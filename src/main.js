@@ -11,14 +11,15 @@
     Vue.use(VueRouter);
     const app = require("./app");
     const routes = [
-      {path: ""      , title: "TOP ", component: require("./pages/default")},
-      {path: "/page1", title: "Page 1", component: require("./pages/page1")},
-      {path: "/page2", title: "Page 2", component: require("./pages/page2")},
-      {path: "/page3", title: "Page 3", component: require("./pages/page3")}
+      {path: ""      , name: "TOP", component: require("./pages/default")},
+      {path: "/page1", name: "いいね", component: require("./pages/page1")},
+      {path: "/page2", name: "いい話", component: require("./pages/page2")},
+      {path: "/page3", name: "Page 3", component: require("./pages/page3")}
     ];
     const router = new VueRouter({routes});
     router.beforeEach((to, from, next) => {
-      document.title = `${to.meta.title} - Jimdo Vue`;
+      console.log(to);
+      document.title = `${to.name} - Jimdo Vue`;
       next();
     });
 
@@ -58,7 +59,9 @@
           $("body").setAttribute("id", "");
           $("body").setAttribute("class", "");
           $("body").setAttribute("style", "");
-          for(let link of $$("link[rel='stylesheet']")){link.parentNode.removeChild(link);}
+          for(let link of $$("link[rel='stylesheet']")){
+            link.parentNode.removeChild(link);
+          }
           init();
         }
       }

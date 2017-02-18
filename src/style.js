@@ -21,6 +21,7 @@ html, body{
 h1{
   margin: 0;
   padding: 10px 0 0;
+  cursor: pointer;
 }
 
 h1, .links{
